@@ -1,7 +1,7 @@
 import { compare, hash } from "bcryptjs"
 import { sign, verify } from "jsonwebtoken"
 import { cookies } from "next/headers"
-import prisma from "./prisma"
+// import prisma from "./prisma"
 
 const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key"
 
@@ -34,10 +34,10 @@ export async function getCurrentUser() {
   const decoded = await verifyToken(token)
   if (!decoded) return null
 
-  const user = await prisma.user.findUnique({
-    where: { id: decoded.userId },
-    select: { id: true, name: true, email: true },
-  })
+  // const user = await prisma.user.findUnique({
+  //   where: { id: decoded.userId },
+  //   select: { id: true, name: true, email: true },
+  // })
 
-  return user
+  return decoded
 }

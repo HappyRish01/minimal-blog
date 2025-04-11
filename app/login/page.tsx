@@ -40,9 +40,9 @@ export default function LoginPage() {
         </form>
         <div className="mt-6 text-center text-sm">
           <p className="text-zinc-600 dark:text-zinc-400">
-            {/* <Link href="/register" className="text-emerald-600 dark:text-emerald-400 hover:underline">
+            <Link href="/register" className="text-emerald-600 dark:text-emerald-400 hover:underline">
               Register
-            </Link> */}
+            </Link>
           </p>
         </div>
       </div>

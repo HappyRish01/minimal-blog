@@ -7,8 +7,8 @@ import { useState } from "react"
 
 type User = {
   id: string
-  name: string
-  email: string
+  // name: string
+  // email: string
 }
 
 export function UserMenu({ user }: { user: User }) {
@@ -20,7 +20,7 @@ export function UserMenu({ user }: { user: User }) {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
       >
-        <span className="font-medium">{user.name}</span>
+        <span className="font-medium">Varun</span>
         <ChevronDown size={16} />
       </button>
       {isOpen && (

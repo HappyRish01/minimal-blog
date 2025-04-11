@@ -23,6 +23,7 @@ export async function login(formData: FormData) {
   }
 
   const token = await createToken(user.id)
+
   cookies().set("token", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -45,9 +46,9 @@ export async function register(formData: FormData) {
 
   // Check if we already have 2 users
   const userCount = await prisma.user.count()
-  if (userCount >= 2) {
-    return { error: "Maximum number of users reached" }
-  }
+  // if (userCount >= 2) {
+  //   return { error: "Maximum number of users reached" }
+  // }
 
   const existingUser = await prisma.user.findUnique({
     where: { email },
